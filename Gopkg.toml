@@ -1,0 +1,8 @@
+[prune]
+  unused-packages = true
+  non-go = true
+  go-tests = true
+
+[[constraint]]
+  name = "github.com/RadhiFadlillah/go-sastrawi"
+  branch = "master"
