@@ -1,4 +1,4 @@
-package noface
+package clarity
 
 import (
 	"strings"

@@ -1,4 +1,4 @@
-package noface
+package clarity
 
 import (
 	sastrawi "github.com/RadhiFadlillah/go-sastrawi"

@@ -1,4 +1,4 @@
-package noface
+package clarity
 
 func NewStopwords(stopword ...string) []string {
 	return stopword

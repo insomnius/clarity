@@ -1,4 +1,4 @@
-package noface
+package clarity
 
 type History struct {
 	Word
