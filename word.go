@@ -1,5 +1,6 @@
 package clarity
 
 type Word struct {
-	Word string `json:"word"`
+	VagueWord     string `json:"vague_word"`
+	ClarifiedWord string `json:"clarified_word"`
 }

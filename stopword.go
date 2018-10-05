@@ -1,7 +1,19 @@
 package clarity
 
+import "regexp"
+
 func NewStopwords(stopword ...string) []string {
 	return stopword
+}
+
+func Stopwording(sentence string) (string, string) {
+
+	for _, stopword := range StopWords {
+		regexStopword := regexp.MustCompile(`\b` + stopword + `\b`)
+		sentence = regexStopword.ReplaceAllString(sentence, "")
+	}
+
+	return "stopwording", sentence
 }
 
 var StopWords = NewStopwords(

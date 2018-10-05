@@ -6,7 +6,7 @@ import (
 	sastrawi "github.com/RadhiFadlillah/go-sastrawi"
 )
 
-func Stem(sentence string) string {
+func Stem(sentence string) (string, string) {
 	words := Tokenizer(sentence)
 
 	stemmer := sastrawi.NewStemmer(sastrawi.DefaultDictionary)
@@ -14,5 +14,5 @@ func Stem(sentence string) string {
 		words[key] = stemmer.Stem(word)
 	}
 
-	return strings.Join(words, " ")
+	return "stemming", strings.Join(words, " ")
 }

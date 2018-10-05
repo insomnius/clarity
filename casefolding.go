@@ -4,6 +4,6 @@ import (
 	"strings"
 )
 
-func Casefold(sentence string) string {
-	return strings.ToLower(sentence)
+func Casefold(sentence string) (string, string) {
+	return "casefolding", strings.ToLower(sentence)
 }
