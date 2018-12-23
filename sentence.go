@@ -3,17 +3,24 @@ package clarity
 import "encoding/json"
 
 type Sentence interface {
+	// Alter perform information extraction and retrieval process
 	Alter() Sentence
 
+	// VagueSentence return vague sentence of Sentence
 	VagueSentence() (vagueSentence string)
+	// ClaritySentence return the final result of information and retrieval process
 	ClaritySentence() (claritySentence string)
 
-	History() []history
-
+	// AsJson convert sentence into json format
 	AsJson() []byte
 
+	// WithHistory will notify the Sentence to store all of transformation history
 	WithHistory() Sentence
+	// WithHistory will notify the Sentence to not store all of transformation history
 	WithoutHistory() Sentence
+
+	// History list of all process with before after of transformed word
+	History() []history
 }
 
 func createSentence(s string) Sentence {
