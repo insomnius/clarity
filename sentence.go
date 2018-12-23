@@ -1,6 +1,8 @@
 package clarity
 
-import "encoding/json"
+import (
+	"encoding/json"
+)
 
 type Sentence interface {
 	// Alter perform information extraction and retrieval process
@@ -87,11 +89,13 @@ func (s *sentence) AsJson() []byte {
 func (s *sentence) perform() {
 	s.claritySentence = s.vagueSentence
 
-	s.tokenizedSentence = tokenize(s.claritySentence)
 	s.casefold()
 	s.stem()
 	s.removeStopword()
 	s.normaliseBlankSpace()
+
+	s.tokenizedSentence = tokenize(s.claritySentence)
+
 	s.removeDup()
 }
 
